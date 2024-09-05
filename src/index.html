@@ -3,20 +3,24 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Modul 323 - Example Project</title>
+    <title>Quizkart</title>
     <script src="https://cdn.tailwindcss.com"></script>
   </head>
-  <body class="h-screen w-screen">
-    <header class="p-4">
-      <div class="max-w-2xl m-auto flex items-center gap-4 border-b-gray-200 border-b pb-4">
-        <img src="logo.png" alt="Logo" class="w-10" />
-        <span class="font-mono font-bold">Modul 323 - Example Project</span>
-      </div>
+  <body class="bg-gray-100 h-screen flex flex-col items-center">
+    <header class="w-full bg-blue-600 p-4 text-white text-center">
+      <h1 class="text-3xl font-bold">M323-Quizkart</h1>
     </header>
-    <main class="max-w-lg m-auto py-4 flex flex-col items-center gap-4" id="app"></main>
-    <footer class="p-4">
-      <div class="max-w-2xl m-auto text-center border-t-gray-200 border-t pt-4">This is a fancy footer 🎩</div>
+    <main class="flex-grow w-full max-w-2xl mx-auto p-6">
+      <div class="flex justify-between mb-4">
+        <h2 class="text-xl font-semibold">Your Quiz Cards</h2>
+      </div>
+      <div id="cards-list" class="space-y-4">
+        <!-- Cards will be rendered here -->
+      </div>
+    </main>
+    <footer class="w-full bg-gray-200 text-center p-4">
+      <p>&copy; 2024 Quizkart Noah Lezama</p>
     </footer>
-    <script src="bundle.js"></script>
+    <script src="./index.js"></script>
   </body>
 </html>
