@@ -1,6 +1,7 @@
-const { calculateTotalScore, update, MSGS } = require("./model");
-
+import { calculateTotalScore, update, MSGS } from "./model.js";
+// source: With AI assistance
 describe("Model tests", () => {
+  // Test for calculateTotalScore
   test("should calculate total score", () => {
     const cards = [{ rating: 2 }, { rating: 1 }, { rating: 0 }];
 
@@ -9,6 +10,7 @@ describe("Model tests", () => {
     expect(result).toBe(3);
   });
 
+  // Test for adding a card
   test("should add a card", () => {
     const initModel = {
       cards: [],
@@ -23,6 +25,7 @@ describe("Model tests", () => {
     expect(updatedModel.cards[0].answer).toBe("A programming language");
   });
 
+  // Test for deleting a card
   test("should delete a card", () => {
     const initModel = {
       cards: [
@@ -38,6 +41,7 @@ describe("Model tests", () => {
     expect(updatedModel.cards[0].question).toBe("What is HTML?");
   });
 
+  // Test for updating form input
   test("should update form input", () => {
     const initModel = {
       newCard: { question: "", answer: "" },
@@ -49,6 +53,7 @@ describe("Model tests", () => {
     expect(updatedModel.newCard.question).toBe("What is CSS?");
   });
 
+  // Test for resetting the form
   test("should reset form on cancel", () => {
     const initModel = {
       newCard: { question: "What is CSS?", answer: "A style sheet language" },
@@ -63,6 +68,7 @@ describe("Model tests", () => {
     expect(updatedModel.editingCardIndex).toBeNull();
   });
 
+  // Test for showing the answer
   test("should show the answer", () => {
     const initModel = {
       cards: [{ question: "What is JavaScript?", answer: "A programming language", showAnswer: false }],
@@ -74,6 +80,7 @@ describe("Model tests", () => {
     expect(updatedModel.cards[0].showAnswer).toBe(true);
   });
 
+  // Test for rating a card
   test("should rate a card", () => {
     const initModel = {
       cards: [{ question: "What is JavaScript?", answer: "A programming language", rating: 0 }],

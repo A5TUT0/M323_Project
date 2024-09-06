@@ -48,7 +48,6 @@
 
    ```bash
    cd src
-
    npm test
    ```
 
