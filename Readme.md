@@ -8,7 +8,6 @@
 - Edit and delete flashcards.
 - Show the answer only when the user wants to.
 - Rank answers with a scoring system (Bad, Good, Excellent).
-- User-friendly interface with a modern design using Tailwind CSS.
 
 ## Technologies
 
