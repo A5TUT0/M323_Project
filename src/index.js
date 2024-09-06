@@ -84,7 +84,7 @@ function viewCard(card, index, dispatch) {
 function view(dispatch, model) {
   const totalScore = calculateTotalScore(model.cards); // Calcula la puntuación total
 
-  // Ordena las tarjetas por el rating en orden descendente
+  // Codigo hecho por IA
   const sortedCards = model.cards.slice().sort((a, b) => b.rating - a.rating);
 
   // Renderiza la vista principal, incluyendo el formulario y las tarjetas ordenadas
@@ -92,6 +92,7 @@ function view(dispatch, model) {
     div({ className: "absolute top-4 right-4 bg-blue-100 text-blue-700 py-2 px-4 rounded-lg shadow" }, [
       p({ className: "font-bold" }, `Total Score: ${totalScore}`), // Muestra la puntuación total
     ]),
+    // Codigo hecho por IA
     renderForm(dispatch, model), // Renderiza el formulario para agregar nuevas tarjetas
     ...sortedCards.map((card, index) => viewCard(card, index, dispatch)), // Renderiza las tarjetas ordenadas
   ]);
@@ -100,12 +101,11 @@ function view(dispatch, model) {
 // Genera el formulario para agregar nuevas tarjetas con campos para la pregunta y la respuesta
 function renderForm(dispatch, model) {
   return div({ className: "mb-4" }, [
-    // Input para la pregunta
+    // I
     input({
       type: "text",
       placeholder: "Enter the question",
       className: "border p-2 rounded w-full mb-2",
-      //Quelle https://developer.mozilla.org/en-US/docs/Web/Events/Creating_and_triggering_events
       oninput: (e) => dispatch({ type: MSGS.UPDATE_NEW_CARD, field: "question", value: e.target.value }),
       value: model.newCard.question || "", // Mantiene el valor del campo sincronizado con el modelo
     }),
@@ -114,7 +114,6 @@ function renderForm(dispatch, model) {
       type: "text",
       placeholder: "Enter the answer",
       className: "border p-2 rounded w-full mb-2",
-      // Quelle https://developer.mozilla.org/en-US/docs/Web/Events/Creating_and_triggering_events
       oninput: (e) => dispatch({ type: MSGS.UPDATE_NEW_CARD, field: "answer", value: e.target.value }),
       value: model.newCard.answer || "",
     }),
@@ -204,10 +203,8 @@ function app(initModel, update, view, node) {
 // Modelo inicial con una tarjeta de ejemplo y un formulario vacío
 const initModel = {
   cards: [{ question: "What is JavaScript?", answer: "A programming language", showAnswer: false, rating: 0 }],
-  newCard: { question: "", answer: "" }, // Campos vacíos para la nueva tarjeta
+  newCard: { question: "", answer: "" },
 };
 
 const rootNode = document.getElementById("app");
 app(initModel, update, view, rootNode);
-
-module.exports = { calculateTotalScore, update, MSGS };
