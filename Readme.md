@@ -41,12 +41,14 @@
 4. Run the application:
 
    ```bash
-   npm start
+   npm run dev
    ```
 
 5. To run the unit tests:
 
    ```bash
+   cd src
+
    npm test
    ```
 
@@ -78,7 +80,3 @@
 []()
 
 []()
-
-```
-
-```
